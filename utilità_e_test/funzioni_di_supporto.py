@@ -51,7 +51,7 @@ def on_average_subgraph_splitter(average_y, downward_hops):
             downward_subgraph[0, i] = average_y[i]
     return downward_subgraph, upward_subgraph
 
-def equivalent_full_balanced_binary_tree(dim_depth, number_of_elements):
+def full_balanced_binary_tree(dim_depth, number_of_elements):
     perfect_balanced_height = -1 * (math.ceil(math.log2(number_of_elements + 1)))
     # coordinate per albero binario equivalente ma idealmente bilanciato
     balanced_line = np.zeros((1, dim_depth))

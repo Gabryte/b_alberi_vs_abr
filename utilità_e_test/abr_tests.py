@@ -1,8 +1,7 @@
-import math
+
 import random
 from timeit import default_timer as timer
 from matplotlib import pyplot as plt
-from Classi.Abr import Abr
 from Classi.AbrNode import AbrNode
 from utilità_e_test.funzioni_di_supporto import *
 import numpy as np
@@ -65,7 +64,7 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
 
     depth = np.array((keys, hop_counter))
 
-    balanced_line, perfect_balanced_height = equivalent_full_balanced_binary_tree(dim_depth, number_of_elements)
+    balanced_line, perfect_balanced_height = full_balanced_binary_tree(dim_depth, number_of_elements)
 
     lower_graph, upper_graph = leafs_graph_splitter(depth, dim_depth, perfect_balanced_height)
 
@@ -148,13 +147,14 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
     ax[1][0].set_xlabel('Number of searches')
     ax[1][0].set_ylabel('Downward hops')
 
+
     keys , hop_counter = rand_binary_search_tree.find_leafs(rand_binary_search_tree.get_root())
 
     depth = np.array((keys,hop_counter))
 
     dim_depth = len(hop_counter)
 
-    balanced_line, perfect_balanced_height = equivalent_full_balanced_binary_tree(dim_depth, number_of_elements)
+    balanced_line, perfect_balanced_height = full_balanced_binary_tree(dim_depth, number_of_elements)
 
     lower_graph, upper_graph = leafs_graph_splitter(depth, dim_depth, perfect_balanced_height)
 

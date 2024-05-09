@@ -84,17 +84,18 @@ class Abr:
     def tree_insert(self,node):
         y = None
         x = self.root
-        hop = 0
+        hop = 2
         while x is not None:
             y = x
             if node.get_key() < x.get_key():
                 x = x.get_left()
             else:
                 x = x.get_right()
-            hop = hop + 1
+            hop = hop + 2
         node.set_parent(y)
         if y is None:
             self.root = node
+            hop = hop + 1
         elif node.get_key() < y.get_key():
             y.set_left_child(node)
         else:
