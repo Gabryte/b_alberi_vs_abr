@@ -150,4 +150,27 @@ class Abr:
         else:
             return "-"
 
+    def find_leafs(self, node):
+
+        keys = []
+        counted_hops = []
+
+        def sub_recursive_function(node, hops, keys,counted_hops):
+            if node.get_left() is not None:
+                hops -= 1
+                sub_recursive_function(node.get_left(), hops, keys,counted_hops)
+                hops += 1
+            if node.get_right() is not None:
+                hops -= 1
+                sub_recursive_function(node.get_right(), hops, keys,counted_hops)
+                hops += 1
+            if node.get_left() is None and node.get_right() is None:
+                keys.append(node.get_key())
+                counted_hops.append(hops)
+
+        hops = 0
+        sub_recursive_function(node,hops,keys,counted_hops)
+
+        return keys, counted_hops
+
 
