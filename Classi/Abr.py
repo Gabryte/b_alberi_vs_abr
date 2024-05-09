@@ -9,8 +9,8 @@ class Abr:
     def __init__(self):
         self.root = None
 
-    def set_root(self,key,satellite_data):
-        self.root = AbrNode(key,satellite_data)
+    def set_root(self,key):
+        self.root = AbrNode(key)
 
     def inorder_tree_walk(self,node):
         if node is not None:

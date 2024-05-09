@@ -1,9 +1,8 @@
 class AbrNode:
     'classe nodo ABR'
 
-    def __init__(self,key,satellite_data):
+    def __init__(self,key):
         self.key = key
-        self.satellite_data = satellite_data
         self.p = None
         self.right = None
         self.left = None
@@ -21,9 +20,6 @@ class AbrNode:
     def get_left(self):
         return self.left
 
-    def get_satellite_data(self):
-        return self.satellite_data
-
     'setter'
     def set_left_child(self, left):
         self.left = left
@@ -34,5 +30,3 @@ class AbrNode:
     def set_parent(self, p):
         self.p = p
 
-    def set_satellite_data(self, st):
-        self.satellite_data = st
