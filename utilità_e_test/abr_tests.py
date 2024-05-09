@@ -181,7 +181,7 @@ def binary_search_test(number_of_elements, number_of_searches, rand_binary_searc
     downward_search_hops = np.zeros((1, number_of_searches))
     x_searches = np.zeros((2, number_of_searches))
     for i in range(0, number_of_searches):
-        result = rand_binary_search_tree.iterative_tree_search(rand_binary_search_tree.get_root(),random.randint(0, 2 * number_of_elements))
+        result = rand_binary_search_tree.iterative_tree_search(rand_binary_search_tree.get_root(),random.randint(0,number_of_elements))
         x_searches[0, i] = i
         downward_search_hops[0, i] = result[1]
     return downward_search_hops, x_searches

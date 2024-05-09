@@ -102,7 +102,7 @@ def btree_test(number_of_elements, number_of_searches, rand_btree):
     x_searches = np.zeros((2, number_of_searches))
 
     for i in range(0, number_of_searches):
-        rand_btree.BTreeSearch(rand_btree.get_root(), random.randint(0, 2 * number_of_elements))
+        rand_btree.BTreeSearch(rand_btree.get_root(), random.randint(0, number_of_elements))
         x_searches[0, i] = i
         reads[0, i] = rand_btree.get_search_hops()
         rand_btree.set_search_hops(0)

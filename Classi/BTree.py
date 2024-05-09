@@ -8,7 +8,7 @@ class BTree:
         self.t = t
         self.search_hops = 0
 
-
+    #TODO Indexes fix
     def BTreeInsert(self, k):
         r = self.root
         hop = 1
