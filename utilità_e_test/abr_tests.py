@@ -23,18 +23,18 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
         accum = round(accum_precision, 4)
         matrix_for_plotting[0, call_counter] = accum
         matrix_for_plotting[1, call_counter] = call_counter + 1
-        i = i + random.randint(0, 9)
+        i = i + 1
         n_downward_tree_hop_number[0, call_counter] = hop_counter
         call_counter = call_counter + 1
 
     fig, ax = plt.subplots(2, 2, figsize=(subplots_dim_x, subplots_dim_y))
 
-    ax[0][0].plot(matrix_for_plotting[0], matrix_for_plotting[1], label="Performance", color="Black")
+    ax[0][0].plot(matrix_for_plotting[1],matrix_for_plotting[0], label="Performance", color="Black")
     ax[0][0].grid(linestyle=':')
     ax[0][0].legend(loc='upper left')
     ax[0][0].set_title('Worst ABR Insertion Performance')
-    ax[0][0].set_xlabel('Time')
-    ax[0][0].set_ylabel('Inserted Elements')
+    ax[0][0].set_xlabel('Inserted Elements')
+    ax[0][0].set_ylabel('Time')
 
     ax[0][1].plot(matrix_for_plotting[1], n_downward_tree_hop_number[0], label="Complexity of Insertion", color="Black")
     ax[0][1].grid(linestyle=':')
@@ -47,6 +47,9 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
     downward_search_hops, x_searches = binary_search_test(number_of_elements, number_of_searches,worst_binary_search_tree)
     average_y_search = running_average(math.ceil(len(x_searches[0]) * 0.15), downward_search_hops)
     downward_subgraph, upward_subgraph = on_average_subgraph_splitter(average_y_search, downward_search_hops)
+
+    while (len(x_searches[0]) < len(average_y_search)):
+        average_y_search.pop(-1)
 
     ax[1][0].plot(x_searches[0], downward_search_hops[0], label='Hops per search', color="black")
     ax[1][0].plot(x_searches[0], average_y_search, label='Running average', color="r")
@@ -104,10 +107,10 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
 
     fig, ax = plt.subplots(2, 2, figsize=(subplots_dim_x, subplots_dim_y))
 
-    ax[0][0].plot(matrix_for_plotting[0], matrix_for_plotting[1], label='Performance', color="r")
+    ax[0][0].plot(matrix_for_plotting[1],matrix_for_plotting[0], label='Performance', color="r")
     ax[0][0].set_title('Rand ABR Insertion Performance')
-    ax[0][0].set_xlabel('Time')
-    ax[0][0].set_ylabel('Inserted Elements')
+    ax[0][0].set_xlabel('Inserted Elements')
+    ax[0][0].set_ylabel('Time')
     ax[0][0].grid(linestyle=':')
     ax[0][0].legend(loc='upper left')
 
@@ -115,13 +118,14 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
     avg_window_size = math.ceil(len(matrix_for_plotting[1]) * 0.15)
     average_y = running_average(avg_window_size, n_downward_tree_hop_number)
 
-
+    while(len(matrix_for_plotting[1]) < len(average_y)):
+        average_y.pop(-1)
 
     # n_downward_tree_hop_number.
 
     ax[0][1].plot(matrix_for_plotting[1], n_downward_tree_hop_number[0], label='Complexity of insertion',color="black")
     ax[0][1].plot(matrix_for_plotting[1], average_y, label='Running average', color="r")
-    ax[0][1].fill_between(matrix_for_plotting[1], 0, average_y, color='r', alpha=0.1)
+    ax[0][1].fill_between(matrix_for_plotting[1], 0, average_y, color='r', alpha=0.15)
     ax[0][1].grid(linestyle=':')
     ax[0][1].legend(loc='upper left')
     ax[0][1].set_title('Rand ABR Insertion Complexity')
@@ -137,6 +141,10 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
 
     downward_subgraph, upward_subgraph = on_average_subgraph_splitter(average_y_search, downward_search_hops)
 
+    while (len(x_searches[0]) < len(average_y_search)):
+        average_y_search.pop(-1)
+
+
     ax[1][0].plot(x_searches[0], downward_search_hops[0], label='Hops per search', color="black")
     ax[1][0].plot(x_searches[0], average_y_search, label='Running average', color="r")
     ax[1][0].fill_between(x_searches[0], average_y_search, upward_subgraph[0], color='blue', alpha=0.3)
@@ -150,6 +158,7 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
 
     keys , hop_counter = rand_binary_search_tree.find_leafs(rand_binary_search_tree.get_root())
 
+
     depth = np.array((keys,hop_counter))
 
     dim_depth = len(hop_counter)
@@ -160,6 +169,10 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
 
     avg_window_size = math.ceil(len(depth[0])*0.15)
     average_leaf_structure = average_leaf_structure_graph(avg_window_size, depth)
+
+    while(len(depth[0]) < len(average_leaf_structure)):
+        average_leaf_structure.pop(-1)
+
 
     ax[1][1].plot(depth[0], depth[1], label="Hops per leaf", color="black", linestyle='dashdot')
     ax[1][1].plot(depth[0], balanced_line[0], label="Equivalent perfect balanced tree", color="Black")

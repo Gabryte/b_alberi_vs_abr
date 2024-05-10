@@ -95,11 +95,11 @@ class Abr:
         node.set_parent(y)
         if y is None:
             self.root = node
-            hop = hop + 1
         elif node.get_key() < y.get_key():
             y.set_left_child(node)
         else:
             y.set_right_child(node)
+        hop = hop + 2
         return hop
 
     def transplant(self, u, v):

@@ -5,4 +5,3 @@ class BTreeNode:
         self.keys = []
         self.children = []
         self.leaf = leaf
-        self.n = 0
