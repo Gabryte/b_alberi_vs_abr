@@ -71,3 +71,11 @@ def get_integer_input(prompt, min_value=None, max_value=None):
                 return value
         except ValueError:
             print("Please enter an integer value.")
+
+def find_median_index(sorted_list):
+    n = len(sorted_list)
+    if n % 2 == 1:
+        return n // 2
+    else:
+        return (n // 2) - 1, n // 2
+

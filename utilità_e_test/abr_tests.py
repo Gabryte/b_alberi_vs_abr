@@ -74,7 +74,8 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
     avg_window_size = math.ceil(depth[0]*0.15)
     average_leaf_structure = average_leaf_structure_graph(avg_window_size,depth)
 
-    ax[1][1].plot(depth[0], depth[1], label="Hops per leaf", color="black", linestyle='solid')
+    ax[1][1].scatter(depth[0], depth[1],s=10,marker="o",label="Hops per leaf", color="black", linestyle='solid')
+    ax[1][1].plot(depth[0], depth[1],label="Hops per leaf", color="black", linestyle='solid')
     ax[1][1].plot(depth[0], balanced_line[0], label="Equivalent full balanced tree", color="Black")
     ax[1][1].fill_between(depth[0], perfect_balanced_height, upper_graph[0], color='blue', alpha=0.1)
     ax[1][1].fill_between(depth[0], perfect_balanced_height, lower_graph[0], color='r', alpha=0.1)
@@ -174,7 +175,8 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
         average_leaf_structure.pop(-1)
 
 
-    ax[1][1].plot(depth[0], depth[1], label="Hops per leaf", color="black", linestyle='dashdot')
+    ax[1][1].scatter(depth[0], depth[1],s=10,marker="o",label="Hops per leaf", color="black", linestyle='solid')
+    ax[1][1].plot(depth[0], depth[1], label="Hops per leaf", color="black", linestyle='solid')
     ax[1][1].plot(depth[0], balanced_line[0], label="Equivalent perfect balanced tree", color="Black")
     ax[1][1].plot(depth[0], average_leaf_structure, label="Running Average", color="r")
     ax[1][1].fill_between(depth[0], perfect_balanced_height, upper_graph[0], color='blue', alpha=0.1)
