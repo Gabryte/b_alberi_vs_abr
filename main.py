@@ -25,6 +25,8 @@ number_of_insertions_comparison_test = 500
 #childPerNode = get_integer_input("Insert number of children per node that will be present into the BTree (ps.much better if it is >= 2): ", min_value=2)
 #graph_x_length = get_integer_input("Insert the x length of the graph (ps.much better if it is >= 10 and <=30): ", min_value=10, max_value=30)
 #graph_y_length = get_integer_input("Insert the y length of the graph (ps.much better if it is >= 10 and <=30): ", min_value=10, max_value=30)
+#number_of_searches_comparison_test = get_integer_input("Insert the number of searches that will be performed for the comparison test (ps.much better if it is >= 15): ", min_value=15)
+#number_of_insertions_comparison_test = get_integer_input("Insert the number of insertions that will be performed for the comparison test (ps.much better if it is >= 15): ", min_value=15)
 
 
 rand_binary_tree = Abr()

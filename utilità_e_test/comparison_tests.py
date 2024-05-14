@@ -122,7 +122,7 @@ def insert_comparison_between_worst_binary_tree_and_worst_BTree(elements, t_para
         x.append(i)
 
     plt.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Worst BTree", color="Red")
+    plt.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
     plt.xlabel('Number of insertions')
     plt.ylabel('Time')
     plt.legend()
@@ -165,7 +165,7 @@ def search_comparison_between_worst_binary_tree_and_worst_BTree(worst_binary_tre
         x.append(i)
 
     plt.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Worst BTree", color="Red")
+    plt.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
     plt.xlabel('Number of searches')
     plt.ylabel('Time')
     plt.legend()
