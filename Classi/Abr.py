@@ -87,19 +87,20 @@ class Abr:
         disk_operations = 0
         while x is not None:
             y = x
+            disk_operations = disk_operations + 1
             if node.get_key() < x.get_key():
                 x = x.get_left()
             else:
                 x = x.get_right()
-            disk_operations = disk_operations + 1
         node.set_parent(y)
+        disk_operations = disk_operations + 1
         if y is None:
             self.root = node
         elif node.get_key() < y.get_key():
             y.set_left_child(node)
         else:
             y.set_right_child(node)
-        disk_operations = disk_operations + 2
+        disk_operations = disk_operations + 1
         return disk_operations
 
     def transplant(self, u, v):

@@ -23,23 +23,21 @@ class BTree:
         i = 0
         while i < len(x.keys) and k > x.keys[i]:
             i = i + 1
-            self.disk_operations += 1
         if x.leaf:
             x.keys.insert(i, k)
             self.disk_operations += 1
         else:
+            self.disk_operations += 1
             if len(x.children[i].keys) == (2 * self.t) - 1:
                 self.BTreeSplitChild(x, i)
                 if k > x.keys[i]:
                     i = i + 1
-                    self.disk_operations += 1
             self.BTreeInsertNonfull(x.children[i], k)
 
 
     def BTreeSplitRoot(self):
         new_root = BTreeNode(False)
         new_root.children.append(self.root)
-        self.disk_operations += 1
         self.root = new_root
         self.BTreeSplitChild(new_root, 0)
         return new_root
