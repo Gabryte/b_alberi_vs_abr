@@ -10,13 +10,13 @@ from utilità_e_test.comparison_tests import search_comparison_between_random_bi
 
 sys.setrecursionlimit(999999999)
 
-elements = 1500
-searches = 400
+elements = 2000
+searches = 2000
 graph_x_length = 15
 graph_y_length = 15
 t_param = 2
-number_of_searches_comparison_test = 600
-number_of_insertions_comparison_test = 600
+number_of_searches_comparison_test = 500
+number_of_insertions_comparison_test = 500
 
 
 

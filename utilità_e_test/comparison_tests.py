@@ -27,7 +27,7 @@ def search_comparison_between_random_binary_tree_and_random_BTree(rand_binary_tr
 
         start = timer()
         for j in range(0, max_searches):
-            rand_btree.BTreeSearch(rand_btree.root,key_to_search[j])
+            rand_btree.BTreeSearch_no_tracking(rand_btree.root,key_to_search[j])
         end = timer()
         accum_precision = end - start
         accum = round(accum_precision, 8)
@@ -148,7 +148,7 @@ def search_comparison_between_worst_binary_tree_and_worst_BTree(worst_binary_tre
 
         start = timer()
         for j in range(0, max_searches):
-            worst_btree.BTreeSearch(worst_btree.root,keys_to_search[j])
+            worst_btree.BTreeSearch_no_tracking(worst_btree.root,keys_to_search[j])
         end = timer()
         accum_precision = end - start
         accum = round(accum_precision, 8)
@@ -190,7 +190,7 @@ def search_comparison_between_worst_binary_tree_and_random_b_tree(worst_binary_t
 
         start = timer()
         for j in range(0, max_searches):
-            random_btree.BTreeSearch(random_btree.root,keys_to_search[j])
+            random_btree.BTreeSearch_no_tracking(random_btree.root,keys_to_search[j])
         end = timer()
         accum_precision = end - start
         accum = round(accum_precision, 8)

@@ -84,14 +84,14 @@ class Abr:
     def tree_insert(self,node):
         y = None
         x = self.root
-        hop = 2
+        disk_operations = 0
         while x is not None:
             y = x
             if node.get_key() < x.get_key():
                 x = x.get_left()
             else:
                 x = x.get_right()
-            hop = hop + 2
+            disk_operations = disk_operations + 1
         node.set_parent(y)
         if y is None:
             self.root = node
@@ -99,8 +99,8 @@ class Abr:
             y.set_left_child(node)
         else:
             y.set_right_child(node)
-        hop = hop + 2
-        return hop
+        disk_operations = disk_operations + 2
+        return disk_operations
 
     def transplant(self, u, v):
         if u.get_p() is None:

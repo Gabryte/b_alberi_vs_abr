@@ -41,7 +41,7 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
     ax[0][1].legend(loc='upper left')
     ax[0][1].set_title('Worst ABR Insertion Complexity')
     ax[0][1].set_xlabel('Inserted Elements')
-    ax[0][1].set_ylabel('Downward Hops per inserted element')
+    ax[0][1].set_ylabel('Disk block reads and block writes per inserted element')
 
     # Misurazione numero di hops in discesa durante un certo numero di ricerche
     downward_search_hops, x_searches = binary_search_test(number_of_elements, number_of_searches,worst_binary_search_tree)
@@ -131,7 +131,7 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
     ax[0][1].legend(loc='upper left')
     ax[0][1].set_title('Rand ABR Insertion Complexity')
     ax[0][1].set_xlabel('Inserted Elements')
-    ax[0][1].set_ylabel('Downward Hops per inserted element')
+    ax[0][1].set_ylabel('Disk block reads and block writes per inserted element')
 
 
 

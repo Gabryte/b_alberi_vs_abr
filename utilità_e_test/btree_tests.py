@@ -48,7 +48,7 @@ def random_case_btree_insert_and_search_tests(random_btree,elements,subplots_dim
     ax[0][1].legend(loc='upper left')
     ax[0][1].set_title('Random BTree Insertion Complexity')
     ax[0][1].set_xlabel('Inserted Elements')
-    ax[0][1].set_ylabel('Reads per inserted element')
+    ax[0][1].set_ylabel('Disk block reads and block writes per inserted element')
 
     # Misurazione numero di letture durante un certo numero di ricerche
     reads, x_searches = btree_test(elements, number_of_searches, random_btree)
@@ -148,7 +148,7 @@ def worst_case_binary_tree_applied_to_btree_insert_and_search_test(btree_with_co
     ax[0][1].legend(loc='upper left')
     ax[0][1].set_title('Worst binary applied to BTree Insertion Complexity')
     ax[0][1].set_xlabel('Inserted Elements')
-    ax[0][1].set_ylabel('Reads per inserted element')
+    ax[0][1].set_ylabel('Disk block reads and block writes per inserted element')
 
     # Misurazione numero di letture durante un certo numero di ricerche
     reads, x_searches = btree_test(elements, number_of_searches, btree_with_consecutive_keys)
