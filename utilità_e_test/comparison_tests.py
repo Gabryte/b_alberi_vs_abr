@@ -1,5 +1,8 @@
 import random
 
+import mpld3
+from matplotlib.pyplot import figure
+
 from Classi.Abr import Abr
 from Classi.AbrNode import AbrNode
 from Classi.BTree import BTree
@@ -43,12 +46,17 @@ def search_comparison_between_random_binary_tree_and_random_BTree(rand_binary_tr
         time_binary_tree.append(accum)
         x.append(i)
 
-    plt.plot(x, time_binary_tree, label="Random Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Random BTree", color="Red")
-    plt.xlabel('Number of searches')
-    plt.ylabel('Time')
-    plt.legend()
-    plt.show()
+    fig = figure()
+    ax = fig.gca()
+
+    ax.plot(x, time_binary_tree, label="Random Binary Tree", color="Black")
+    ax.plot(x, time_b_tree, label="Random BTree", color="Red")
+    ax.set_xlabel('Number of searches')
+    ax.set_ylabel('Time')
+    ax.legend()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Search_Comparison_RAND_RAND.html", 'w') as disk:
+        disk.write(file_html)
 
 def insert_comparison_between_random_binary_tree_and_random_BTree(elements,t_param):
     time_binary_tree = []
@@ -85,13 +93,18 @@ def insert_comparison_between_random_binary_tree_and_random_BTree(elements,t_par
         time_binary_tree.append(accum)
 
         x.append(i)
+    fig = figure()
+    ax = fig.gca()
 
-    plt.plot(x, time_binary_tree, label="Random Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Random BTree", color="Red")
-    plt.xlabel('Number of insertions')
-    plt.ylabel('Time')
-    plt.legend()
-    plt.show()
+    ax.plot(x, time_binary_tree, label="Random Binary Tree", color="Black")
+    ax.plot(x, time_b_tree, label="Random BTree", color="Red")
+    ax.set_xlabel('Number of insertions')
+    ax.set_ylabel('Time')
+    ax.legend()
+
+    file_html = mpld3.fig_to_html(fig)
+    with open("Insert_comparison_RAND_RAND.html", 'w') as disk:
+        disk.write(file_html)
 
 def insert_comparison_between_worst_binary_tree_and_worst_BTree(elements, t_param):
     time_binary_tree = []
@@ -121,12 +134,16 @@ def insert_comparison_between_worst_binary_tree_and_worst_BTree(elements, t_para
         time_binary_tree.append(accum)
         x.append(i)
 
-    plt.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
-    plt.xlabel('Number of insertions')
-    plt.ylabel('Time')
-    plt.legend()
-    plt.show()
+    fig = figure()
+    ax = fig.gca()
+    ax.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
+    ax.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
+    ax.set_xlabel('Number of insertions')
+    ax.set_ylabel('Time')
+    ax.legend()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Insert_comparison_WORST_WORST.html", 'w') as disk:
+        disk.write(file_html)
 
 def search_comparison_between_worst_binary_tree_and_worst_BTree(worst_binary_tree,worst_btree,elements):
     time_binary_tree = []
@@ -164,12 +181,16 @@ def search_comparison_between_worst_binary_tree_and_worst_BTree(worst_binary_tre
         time_binary_tree.append(accum)
         x.append(i)
 
-    plt.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
-    plt.xlabel('Number of searches')
-    plt.ylabel('Time')
-    plt.legend()
-    plt.show()
+    fig = figure()
+    ax = fig.gca()
+    ax.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
+    ax.plot(x, time_b_tree, label="Worst binary applied to Btree", color="Red")
+    ax.set_xlabel('Number of searches')
+    ax.set_ylabel('Time')
+    ax.legend()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Search_comparison_WORST_WORST.html", 'w') as disk:
+        disk.write(file_html)
 
 def search_comparison_between_worst_binary_tree_and_random_b_tree(worst_binary_tree,random_btree,elements):
     time_binary_tree = []
@@ -205,10 +226,14 @@ def search_comparison_between_worst_binary_tree_and_random_b_tree(worst_binary_t
         accum = round(accum_precision, 8)
         time_binary_tree.append(accum)
         x.append(i)
+    fig = figure()
+    ax = fig.gca()
 
-    plt.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
-    plt.plot(x, time_b_tree, label="Random BTree", color="Red")
-    plt.xlabel('Number of searches')
-    plt.ylabel('Time')
-    plt.legend()
-    plt.show()
+    ax.plot(x, time_binary_tree, label="Worst Binary Tree", color="Black")
+    ax.plot(x, time_b_tree, label="Random BTree", color="Red")
+    ax.set_xlabel('Number of searches')
+    ax.set_ylabel('Time')
+    ax.legend()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Search_comparison_WORST_RAND.html", 'w') as disk:
+        disk.write(file_html)

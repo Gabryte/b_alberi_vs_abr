@@ -1,7 +1,9 @@
 
 import random
 from timeit import default_timer as timer
-from matplotlib import pyplot as plt
+from  matplotlib import pyplot as plt
+from matplotlib.pyplot import figure
+import mpld3
 from Classi.AbrNode import AbrNode
 from utilità_e_test.funzioni_di_supporto import *
 import numpy as np
@@ -86,7 +88,9 @@ def worst_case_binary_search_tree_insertion_and_search_tests(worst_binary_search
     ax[1][1].set_xlabel('Leaf key')
     ax[1][1].set_ylabel('Downward hops')
 
-    plt.show()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Worst_Case_Binary_Insertion_Search.html",'w') as disk:
+        disk.write(file_html)
 
 
 def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,number_of_elements,subplots_dim_x,subplots_dim_y,number_of_searches):
@@ -188,7 +192,9 @@ def random_case_binary_tree_insertion_and_search_tests(rand_binary_search_tree,n
     ax[1][1].set_xlabel('Leaf key')
     ax[1][1].set_ylabel('Downward hops')
 
-    plt.show()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Random_Case_Binary_Insertion_Search.html", 'w') as disk:
+        disk.write(file_html)
 
 
 

@@ -1,5 +1,6 @@
 from Classi.Abr import Abr
 import sys
+import webbrowser
 from utilità_e_test.abr_tests import random_case_binary_tree_insertion_and_search_tests, worst_case_binary_search_tree_insertion_and_search_tests
 from utilità_e_test.btree_tests import *
 from utilità_e_test.comparison_tests import search_comparison_between_random_binary_tree_and_random_BTree, \
@@ -57,3 +58,13 @@ insert_comparison_between_worst_binary_tree_and_worst_BTree(number_of_insertions
 rand_btree = BTree(t_param)
 worst_binary_tree = Abr()
 search_comparison_between_worst_binary_tree_and_random_b_tree(worst_binary_tree, rand_btree, number_of_searches_comparison_test)
+
+webbrowser.open("Random_Case_Binary_Insertion_Search.html")
+webbrowser.open("Random_Case_BTree_Insertion_Search.html")
+webbrowser.open("Worst_Case_Binary_Insertion_Search.html")
+webbrowser.open("Worst_Case_Applied_BTree_Insertion_Search.html")
+webbrowser.open("Insert_comparison_RAND_RAND.html")
+webbrowser.open("Insert_comparison_WORST_WORST.html")
+webbrowser.open("Search_Comparison_RAND_RAND.html")
+webbrowser.open("Search_comparison_WORST_WORST.html")
+webbrowser.open("Search_comparison_WORST_RAND.html")

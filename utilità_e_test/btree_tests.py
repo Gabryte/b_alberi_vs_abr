@@ -1,6 +1,8 @@
 
 import random
 from timeit import default_timer as timer
+
+import mpld3
 from matplotlib import pyplot as plt
 from Classi.BTreeNode import BTreeNode
 from Classi.BTree import BTree
@@ -102,7 +104,9 @@ def random_case_btree_insert_and_search_tests(random_btree,elements,subplots_dim
     ax[1][1].set_xlabel('Leaf key')
     ax[1][1].set_ylabel('Downward hops')
 
-    plt.show()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Random_Case_BTree_Insertion_Search.html", 'w') as disk:
+        disk.write(file_html)
 
 
 def worst_case_binary_tree_applied_to_btree_insert_and_search_test(btree_with_consecutive_keys, elements, subplots_dim_x, subplots_dim_y, number_of_searches):
@@ -202,7 +206,9 @@ def worst_case_binary_tree_applied_to_btree_insert_and_search_test(btree_with_co
     ax[1][1].set_xlabel('Leaf key')
     ax[1][1].set_ylabel('Downward hops')
 
-    plt.show()
+    file_html = mpld3.fig_to_html(fig)
+    with open("Worst_Case_Applied_BTree_Insertion_Search.html", 'w') as disk:
+        disk.write(file_html)
 
 
 
