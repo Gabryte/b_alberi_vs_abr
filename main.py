@@ -23,8 +23,8 @@ number_of_insertions_comparison_test = 3000
 elements = get_integer_input("Insert number of elements that will be present into the trees (btree and binarytree ps.much better if it is >= 25): ", min_value=25)
 searches = get_integer_input("Insert number of searches that will be performed on the trees (btree and binarytree ps.much better if it is >= 25): ", min_value=25)
 childPerNode = get_integer_input("Insert param t of the B-Tree, remember that if t=2 you have 1<=children<=4 (ps.much better if it t is >= 2): ", min_value=2)
-graph_x_length = get_integer_input("Insert the x length of the graph (ps.much better if it is >= 10 and <=30): ", min_value=10, max_value=30)
-graph_y_length = get_integer_input("Insert the y length of the graph (ps.much better if it is >= 10 and <=30): ", min_value=10, max_value=30)
+graph_x_length = get_integer_input("Insert the x length of the graph (ps.much better if it is >= 5 and <=30): ", min_value=10, max_value=30)
+graph_y_length = get_integer_input("Insert the y length of the graph (ps.much better if it is >= 5 and <=30): ", min_value=10, max_value=30)
 number_of_searches_comparison_test = get_integer_input("Insert the number of searches that will be performed for the comparison test (ps.much better if it is >= 15): ", min_value=15)
 number_of_insertions_comparison_test = get_integer_input("Insert the number of insertions that will be performed for the comparison test (ps.much better if it is >= 15): ", min_value=15)
 
